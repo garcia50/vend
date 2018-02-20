@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "As a user" do
   describe "When I visit a specific vending machine page" do
     it "I see snack info associated wth machine" do
-      owner = Owner.have_contentreate!(name: "Jeff")
+      owner = Owner.create!(name: "Jeff")
       machine = Machine.create!(location: "Denver", owner: owner)
       snacks_1 = Snack.create!(name: "Skittle", price: 3.00)
       snacks_2 = Snack.create!(name: "PopRocks", price: 6.00)
