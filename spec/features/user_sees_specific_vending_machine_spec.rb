@@ -8,10 +8,13 @@ describe "As a user" do
       snacks_1 = Snack.create!(name: "Skittle", price: 3.00)
       snacks_2 = Snack.create!(name: "PopRocks", price: 6.00)
 
+      machine.snacks << snacks_1
+      machine.snacks << snacks_2
+
       visit machine_path(machine)
 
       expect(page).to have_content("Snacks")
-      expect(page).to have_content("Skittles")
+      expect(page).to have_content("Skittle")
       expect(page).to have_content("$3.00")
       expect(page).to have_content("PopRocks")
       expect(page).to have_content("$6.00")
@@ -21,6 +24,3 @@ describe "As a user" do
 end
 
 
-# As a user
-# When I visit a specific vending machine page
-# I see the name of all of the snacks associated with that vending machine along with their price
