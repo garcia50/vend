@@ -1,0 +1,20 @@
+<h1>Snack</h1>
+
+
+<%= @snack.name %>
+<br>
+<%= number_to_currency(@snack.price) %>
+<br>
+<% @snack.machines.each do |machine| %>
+  <%= machine.location %>
+<% end %>
+<br>
+<% @snack.machines.each do |machine| %>
+  <%= machine.average_price %>
+<% end %>
+
+
+<!-- Locations
+* Don's Mixed Drinks (3 kinds of snacks, average price of $2.50)
+* Turing Basement (2 kinds of snacks, average price of $3.00)
+ -->
